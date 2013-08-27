@@ -14,6 +14,32 @@
 			$value = implode('/', array_reverse(explode('/', strtok($string, ' '))));
 			return $value;
 		}
-	}
 
+		static function timeToDate($string){
+			$value = date('r', $string);
+			return $value;
+		}
+
+    static function booleanToCheckbox($string){
+      if ($string === 'true') {
+        return 'yes';
+      }
+      elseif ($string === 'false') {
+        return 'no';
+      }
+      else {
+        return '';
+      }
+    }
+
+    static function returnCurrentDate($string) {
+      $date = date('c');
+      return $date;
+    }
+
+    static function commaSeparate($string) {
+      $value = str_replace(' ', ', ', $string);
+      return $value;
+    }
+  }
 ?>
